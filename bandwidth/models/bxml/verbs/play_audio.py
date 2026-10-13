@@ -12,14 +12,14 @@ class PlayAudio(Verb):
 
     def __init__(
         self, audio_uri: str,
-        username: str=None, password: str=None
+        username: str = None, password: str = None
     ):
         """Initialize a <PlayAudio> verb
 
         Args:
             audio_uri (str): The URL of the audio file to play. May be a relative URL.
-            username (str, optional): The username to send in the HTTP request to audio_uri.
-            password (str, optional): The password to send in the HTTP request to audio_uri.
+            username (str, optional): The username to send in the HTTP request to audio_uri. Defaults to None.
+            password (str, optional): The password to send in the HTTP request to audio_uri. Defaults to None.
         """
         self.audio_uri = audio_uri
         self.username = username
