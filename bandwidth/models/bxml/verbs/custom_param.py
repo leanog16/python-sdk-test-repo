@@ -10,10 +10,11 @@ from ..verb import Verb
 
 class CustomParam(Verb):
     def __init__(self, name: str = None, value: str = None):
-        """
-        Initialize a <CustomParam> verb
-        :param name: The name of this parameter, up to 256 characters.
-        :param value: The value of this parameter, up to 2048 characters.
+        """Initialize a <CustomParam> verb
+
+        Args:
+            name (str, optional): The name of this parameter, up to 256 characters. Defaults to None.
+            value (str, optional): The value of this parameter, up to 2048 characters. Defaults to None.
         """
         self.name = name
         self.value = value

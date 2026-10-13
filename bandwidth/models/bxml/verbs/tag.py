@@ -10,7 +10,7 @@ from ..verb import Verb
 
 class Tag(Verb):
 
-    def __init__(self, content=""):
+    def __init__(self, content: str = ""):
         """Initialize a <Tag> verb
 
         Args:

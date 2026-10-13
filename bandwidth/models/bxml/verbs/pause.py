@@ -9,10 +9,10 @@ from ..verb import Verb
 
 
 class Pause(Verb):
-    def __init__(self, duration:int=1):
+    def __init__(self, duration: int = 1):
         """Initialize a <Pause> verb
         Args:
-            duration (str, optional): The time in seconds to pause. Default value is 1.
+            duration (int, optional): The time in seconds to pause. Default value is 1.
         """
         self.duration = str(duration)
 

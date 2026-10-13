@@ -366,6 +366,18 @@ Class | Method | HTTP request | Description
 
 
 <a id="documentation-for-authorization"></a>
+## Utilities
+
+The `bandwidth.utils` package provides helpers for phone number normalization,
+callback auth verification, retrying transient API failures and media
+Content-Type detection. See [docs/Utils.md](docs/Utils.md).
+
+```python
+from bandwidth.utils import to_e164, retry_with_backoff
+
+to_e164("(919) 555-1234")  # "+19195551234"
+```
+
 ## Documentation For Authorization
 
 

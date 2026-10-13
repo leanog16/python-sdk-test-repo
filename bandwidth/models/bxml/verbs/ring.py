@@ -11,14 +11,14 @@ from ..verb import Verb
 class Ring(Verb):
 
     def __init__(
-        self, duration: int=None,
-        answer_call: bool=None,
+        self, duration: float = None,
+        answer_call: bool = None,
     ):
         """Initialize a <Ring> verb
 
         Args:
-            duration (int, optional): How many seconds to play ringing on the call. Default value is 5. Range: decimal values between 0.1 - 86400.
-            answer_call (bool, optional): A boolean indicating whether or not to answer the call when Ring is executed on an unanswered incoming call. Default value is 'true'.
+            duration (float, optional): How many seconds to play ringing on the call. Default value is 5. Range: decimal values between 0.1 - 86400.
+            answer_call (bool, optional): A boolean indicating whether or not to answer the call when Ring is executed on an unanswered incoming call. Default value is True.
         """
         self.duration = duration
         self.answer_call = answer_call

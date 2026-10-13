@@ -21,7 +21,6 @@ class Verb:
         Args:
             tag (str): Name of the XML element
             content (str, optional): XML element content. Defaults to None.
-            nested_verbs (list[BxmlVerb], optional): XML element children. Defaults to None.
         """
         self._tag = tag
         self._content = content
@@ -33,10 +32,20 @@ class Verb:
     def __len__(self) -> int:
         """Override default len method. Returns length of _nested_verbs array
 
+        Non-nestable verbs have no children, so their length is 0.
+
         Returns:
             int: Length of self._nested_verbs
         """
-        return len(self._nested_verbs)
+        return len(getattr(self, "_nested_verbs", []))
+
+    def __repr__(self) -> str:
+        """Return a developer friendly representation of the verb
+
+        Returns:
+            str: The class name and serialized BXML, e.g. Pause('<Pause duration="1" />')
+        """
+        return f"{type(self).__name__}({self.to_bxml()!r})"
 
     def __getitem__(self, position) -> Verb:
         """Override default getitem method. Makes the object iterable.
@@ -44,10 +53,13 @@ class Verb:
         Args:
             position (int): Desired self._nested_verbs list position
 
+        Raises:
+            IndexError: If the verb has no nested verbs at that position
+
         Returns:
-            BxmlVerb: Desired BXML verb
+            Verb: Desired BXML verb
         """
-        return self._nested_verbs[position]
+        return getattr(self, "_nested_verbs", [])[position]
 
     def _set_attributes(self, root: ET.Element):
         """Set XML attributes on an Element
