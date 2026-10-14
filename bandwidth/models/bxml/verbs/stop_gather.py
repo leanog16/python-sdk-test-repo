@@ -13,4 +13,4 @@ class StopGather(Verb):
     def __init__(self):
         """Initialize a <StopGather> verb
         """
-        super().__init__(tag="StopGather", content=None)
+        super().__init__(tag="StopGather")

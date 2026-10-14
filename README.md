@@ -366,6 +366,12 @@ Class | Method | HTTP request | Description
 
 
 <a id="documentation-for-authorization"></a>
+## Developer Tools
+
+The `bandwidth.tools` package includes helpers for local development: a SQLite
+callback store, a BXML parser, a media cache, audio conversion, routing rule
+evaluation and a webhook tester. See [docs/Tools.md](docs/Tools.md).
+
 ## Documentation For Authorization
 
 
